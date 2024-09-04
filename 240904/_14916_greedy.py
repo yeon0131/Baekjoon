@@ -6,15 +6,18 @@ import sys
 
 n = int(sys.stdin.readline());
 
-answer_5 = n//5;
-answer_2 = (n % 5)//2;
+cnt = 0
 
-if (n<5) and (n%2 != 0) :
-    print(-1)
-elif (n%5)%2 != 0 :
-    print(-1)
-else:
-    print(answer_5 + answer_2)
+while num >=0:
+    if num % 5 == 0:
+        cnt += int(num/5)
+        print(cnt)
+        exit(0)
+    num -= 2
+    cnt += 1
+
+print(-1)
+
 
 
 
