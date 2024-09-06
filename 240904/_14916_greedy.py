@@ -8,15 +8,15 @@ n = int(sys.stdin.readline());
 
 cnt = 0
 
-while num >=0:
-    if num % 5 == 0:
-        cnt += int(num/5)
+while n >=0:
+    if n % 5 == 0:
+        cnt += int(n/5)
         print(cnt)
-        exit(0)
-    num -= 2
+        break
+    n -= 2
     cnt += 1
-
-print(-1)
+else:
+    print(-1)
 
 
 
