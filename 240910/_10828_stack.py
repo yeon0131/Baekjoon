@@ -8,29 +8,35 @@
 import sys
 
 N = int(sys.stdin.readline())
-stack_list = list(sys.stdin.readline().split())
-
 stack_box = []
 
-for ele in stack_list :
+for _ in range(N):
+    ele = sys.stdin.readline().strip()
+
     if "push" in ele:
         # 공백을 기준으로 자르고 마지막 요소 반환
         ele = ele.split()[-1]
         stack_box.append(ele)
 
-    elif "pop" in stack_list:
-        res = stack_box.pop()
-        print(res)
+    elif ele == "pop":
+        # 만약 stack_box에 요소가 있다면
+        if stack_box:
+            res = stack_box.pop()
+            print(res)
+        else: # if not stack_box와 같은 의미
+            print(-1)
 
-    elif "size" in stack_list:
+    elif ele == "size":
         print(len(stack_box))
 
-    elif "empty" in stack_list:
+    elif ele == "empty":
         if not stack_box:
-            print("1")
-        print("0")
+            print(1)
+        else:
+            print(0)
 
-    elif "top" in stack_list:
-        if not stack_box:
-            print("-1")
-        print(stack_box[-1])
+    elif ele == "top":
+        if stack_box:
+            print(stack_box[-1])
+        else:
+            print(-1)
