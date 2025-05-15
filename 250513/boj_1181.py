@@ -7,7 +7,7 @@
 n = int(input())
 words = []
 
-for n in range(n):
+for _ in range(n):
     word = input()
 
     # 중복제거

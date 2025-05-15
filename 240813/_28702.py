@@ -6,52 +6,34 @@
 # i가 3의 배수이지만 5의 배수가 아니면 “Fizz”를 출력합니다.
 
 # i가 3의 배수가 아니지만 5의 배수이면 “Buzz”를 출력합니다.
- 
+
 # i가 3의 배수도 아니고 5의 배수도 아닌 경우 i를 그대로 출력합니다.
 
 # FizzBuzz 문제에서 연속으로 출력된 세 개의 문자열이 주어집니다. 
 # 이때, 이 세 문자열 다음에 올 문자열은 무엇일까요?
 
 
-import sys
+def fizzbuzz(n):
+    if n % 3 == 0 and n % 5 == 0:
+        return "FizzBuzz"
+    elif n % 3 == 0:
+        return "Fizz"
+    elif n % 5 == 0:
+        return "Buzz"
+    else:
+        # 여기에서 else문에 들어오는 값들은 정수일텐데 왜 굳이 리턴값을 str타입으로 지정했는지?
+        # 사용자가 입력한 값들이 모두 문자열로 저장되기 때문에 
+        # 34번째 줄에서 비교를 할때 같은 문자열이여야 비교가 가능!!
+        return str(n)
+    
+# 세 개의 값 입력받아서 리스트에 저장
+arr = [input().strip() for _ in range(3)]
 
-arr = []
+# 시퀀스의 시작점 찾기기
+i = 1
+while True:
+    if[fizzbuzz(i),fizzbuzz(i+1),fizzbuzz(i+2)] == arr:
+        break
+    i += 1
 
-# 세 개의 값 입력해서 리스트에 저장
-for _ in range(3):
-    i = sys.stdin.readline()
-    arr.append(i)
-
-# 입력된 세 개의 값 분석
-for i in range(3):
-    if arr[i] == "FizzBuzz":
-        arr[i] = 
-    elif arr[i] == "Fizz":
-        arr[i] = 
-    elif arr[i] == "Buzz":
-        arr[i] = 
-    elif isinstance(arr[i],int) :
-        arr[i] = int(arr[i])
-
-
-# 조건에 맞는 그 다음 값 출력
-
-
-
-
-if i % 3==0 || i % 5==0:
-    a = “FizzBuzz”
-elif i % 3==0 || i % 5!=0:
-    a = “Fizz”
-elif i % 3!=0 || i % 5!=0:
-    a = i   
-
-
-
-
-# isinstance(객체, 클래스_또는_클래스의_튜플)
-# 파이썬에서 객체가 특정 클래스나 데이터 타입에 속하는지를 확인할 때 사용되는 내장 함수
-
-# 예시
-# x가 int 또는 float 타입인지 확인
-# print(isinstance(x, (int, float)))  # True
+print(fizzbuzz(i+3))
