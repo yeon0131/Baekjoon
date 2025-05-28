@@ -11,3 +11,6 @@ for i in range(3):
     print(arr[i],end=' ')
 
 # print(*arr) 으로도 대체 가능
+
+# 한줄변태용 정답
+# print(*sorted(map(int, input().split())))
