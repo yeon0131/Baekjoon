@@ -46,5 +46,5 @@ for _ in range(n):
 
 # 문제핵심
 # 1. input()대신에 sys.stdin.readline()쓰기
-# 2. pop구현할 때 [-1]으로 값을 삭제하는 것이 아닌
+# 2. pop구현할 때 pop(0)으로 값을 삭제하는 것이 아닌
 #    collections.deque를 활용, popleft()로 시간복잡도 문제 없음
